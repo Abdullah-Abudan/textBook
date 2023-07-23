@@ -6,7 +6,7 @@ export const BookContainer = styled.div`
   border: 1px solid #17a2b8;
   border-radius: 10px;
   box-shadow: inset 1px 0 1px #bcbcbc;
-  margin: 20px auto;
+  margin:  auto;
   position: relative;
   overflow: hidden;
   padding: 10px;

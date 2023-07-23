@@ -105,7 +105,7 @@ export default function Activity1() {
 
       <div style={{display:"flex",flexDirection:"column",gap:"10px"}}>
         <div>
-          <Img src={children}/>
+          <Img src={children} height={'147px'} />
         </div>
         <StructureInputsActivity/>
       </div>

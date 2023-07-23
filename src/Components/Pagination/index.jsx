@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect  } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import LeftSide from '../LeftSide';
+import { Link, useLocation } from 'react-router-dom';
+
 const TagsArea = styled.div`
   padding: 25px;
   justify-content: space-between;
-  border-top: 1px solid #f6f9fb;
   padding: 25px 10px;
 `;
 
@@ -41,16 +40,27 @@ const TagLink = styled(Link)`
 
 const Pagination = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const location = useLocation();
 
   const handleTagClick = (index) => {
     setActiveIndex(index);
   };
 
+  useEffect(() => {
+    // Get the current pathname from the location object
+    const currentPath = location.pathname; // property of the window object in the browser's JavaScript environment
+
+    // Extract the number from the pathname to determine the active index
+    const activeIndexFromPath = Number(currentPath.replace('/Activity', '')) - 1;
+
+    // Update the active state based on the extracted index
+    setActiveIndex(activeIndexFromPath);
+  }, [location]);
+
   return (
     <TagsArea>
       <TagsList>
-        
-      <TagItem>
+        <TagItem>
           <TagLink
             to="/Activity3"
             className={activeIndex === 2 ? 'active' : ''}
@@ -70,7 +80,6 @@ const Pagination = () => {
           </TagLink>
         </TagItem>
 
-
         <TagItem>
           <TagLink
             to="/Activity1"
@@ -80,7 +89,6 @@ const Pagination = () => {
             1
           </TagLink>
         </TagItem>
-
       </TagsList>
     </TagsArea>
   );

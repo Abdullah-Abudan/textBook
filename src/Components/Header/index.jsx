@@ -12,7 +12,6 @@ export default function Header() {
   return (
     <div>
         <BorderHeader/>
-
         <BlackBlock/>
     </div>
   )
