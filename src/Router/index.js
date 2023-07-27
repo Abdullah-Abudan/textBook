@@ -2,16 +2,16 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // pages
-import Activity1 from "../Pages/index";
-import Activity2 from "../Pages/activity2";
-import Activity3 from "../Pages/activity3";
+import Question1 from "../Pages/index";
+import Question2 from "../Pages/Question2";
+import Question3 from "../Pages/Question3";
 
 // Paths
 export const Paths = {
-  Activity: "/",
-  Activity1: "/Activity1",
-  Activity2: "/Activity2",
-  Activity3: "/Activity3",
+  Question: "/",
+  Question1: "/Question1",
+  Question2: "/Question2",
+  Question3: "/Question3",
 };
 
 const Router = () => {
@@ -19,27 +19,27 @@ const Router = () => {
     <Routes>
       <Route
       index
-      path={Paths.Activity}
+      path={Paths.Question}
       element={
-      <Activity1/> 
+      <Question1/> 
     }
     />
       <Route
-      path={Paths.Activity1}
+      path={Paths.Question1}
       element={
-      <Activity1/> 
+      <Question1/> 
     }
     />
       <Route
-      path={Paths.Activity2}
+      path={Paths.Question2}
       element={
-      <Activity2/> 
+      <Question2/> 
     }
     />
       <Route
-      path={Paths.Activity3}
+      path={Paths.Question3}
       element={
-      <Activity3/> 
+      <Question3/> 
     }
     />
     </Routes>

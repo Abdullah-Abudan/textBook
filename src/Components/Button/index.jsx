@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
   width: 100%;
@@ -12,16 +12,33 @@ const Container = styled.div`
 const CustomButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 18%;
-  padding: 10px 0;
+  width: 16%;
+  padding: 10px;
   overflow: hidden;
   cursor: pointer;
   border-radius: 50px;
   border: 1px solid #17a2b8;
   background: #17a2b8;
-  &:hover {
-    background-color: transparent;
+  position: relative;
+
+
+
+  &:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #fff;
+    transition: all 0.4s;
+    transform: scale(0.2, 1);
   }
 `;
 
@@ -37,13 +54,77 @@ const Button = styled.button`
   ${CustomButtonContainer}:hover & {
     color: #17a2b8;
     transition: all 1s linear;
+    z-index: 1;
   }
 `;
 
+
+const MouseButtonDown = styled.div`
+  width: 30px;
+  cursor: pointer;
+  position: relative;
+`;
+
+const move = keyframes`
+  0%, 100% {
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+`;
+
+const Chevron = styled.div`
+  width: 28px;
+  height: 10px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: ${move} 3s ease-out infinite;
+
+  &:before,
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+  }
+
+  &:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+    border: 1px solid #17a2b8;
+    border-right: 0;
+  }
+
+  &:after {
+    right: 0;
+    transform: skew(0deg, -30deg);
+    border: 1px solid #17a2b8;
+    border-left: 0;
+  }
+
+  &:first-child {
+    animation: ${move} 3s ease-out 1s infinite;
+  }
+
+  &:nth-child(2) {
+    animation: ${move} 3s ease-out 2s infinite;
+  }
+
+`;
 const CustomButton = () => {
   return (
     <Container>
       <CustomButtonContainer>
+      <MouseButtonDown>
+        <Chevron/>
+        <Chevron/>
+        <Chevron/>
+        </MouseButtonDown>
         <Button>مراجعة قبل الانهاء</Button>
       </CustomButtonContainer>
     </Container>

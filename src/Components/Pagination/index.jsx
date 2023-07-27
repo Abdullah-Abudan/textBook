@@ -42,16 +42,14 @@ const Pagination = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const location = useLocation();
 
-  const handleTagClick = (index) => {
-    setActiveIndex(index);
-  };
+
 
   useEffect(() => {
     // Get the current pathname from the location object
-    const currentPath = location.pathname; // property of the window object in the browser's JavaScript environment
+    const currentPath = location.pathname;
 
-    // Extract the number from the pathname to determine the active index
-    const activeIndexFromPath = Number(currentPath.replace('/Activity', '')) - 1;
+    // Extract the index from the pathname
+    const activeIndexFromPath = Number(currentPath.replace('/Question', '')) - 1;
 
     // Update the active state based on the extracted index
     setActiveIndex(activeIndexFromPath);
@@ -62,9 +60,8 @@ const Pagination = () => {
       <TagsList>
         <TagItem>
           <TagLink
-            to="/Activity3"
+            to="/Question3"
             className={activeIndex === 2 ? 'active' : ''}
-            onClick={() => handleTagClick(2)}
           >
             3
           </TagLink>
@@ -72,9 +69,8 @@ const Pagination = () => {
 
         <TagItem>
           <TagLink
-            to="/Activity2"
+            to="/Question2"
             className={activeIndex === 1 ? 'active' : ''}
-            onClick={() => handleTagClick(1)}
           >
             2
           </TagLink>
@@ -82,9 +78,8 @@ const Pagination = () => {
 
         <TagItem>
           <TagLink
-            to="/Activity1"
+            to="/Question1"
             className={activeIndex === 0 ? 'active' : ''}
-            onClick={() => handleTagClick(0)}
           >
             1
           </TagLink>

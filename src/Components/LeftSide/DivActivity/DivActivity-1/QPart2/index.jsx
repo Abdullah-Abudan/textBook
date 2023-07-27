@@ -60,7 +60,7 @@ const DivFlexActivity = styled(DivFlex)`
   justify-content: space-evenly;
   
 `;
-export default function Q2() {
+export default function Question2() {
   // input
   const [txt2, setTxt2] = useState('');
   const [txt3, setTxt3] = useState('');

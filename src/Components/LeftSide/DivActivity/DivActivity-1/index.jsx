@@ -62,7 +62,7 @@ const DivFlexActivity = styled(DivFlex)`
   justify-content: space-evenly;
   
 `;
-export default function Activity1() {
+export default function Question1() {
 
     // audio
     const [isMusicPlaying, setIsMusicPlaying] = useState(false);
