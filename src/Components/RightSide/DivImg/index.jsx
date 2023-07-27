@@ -1,32 +1,15 @@
-import { styled } from "styled-components";
 import { useState } from "react";
 
 // img
-
 import border from "../../../Images/border-1.png";
 import audio from "../../../Images/audio.png";
 import click from "../../../Images/click.png";
 
 // audio
 import zatardescr from "../../../Audio/zatarDescr.mp3"
-export const Img = styled.img`
-object-fit: contain;  
-`;
-const DivImg = styled.div`
-position: absolute;
-top: -3px;
-left:50%;
-transform: translateX(-25%);
-display: flex;
-align-items: center;
-gap: 5px;
-`;
-const CombineImg = styled.div`
-transform: translate(20px,30px);
-display: flex;
-align-items: center;
-gap: 5px;
-`;
+import { CombineImg, DivImg, Img } from "./style";
+
+
 
 
 export default function MidImage() {
@@ -38,7 +21,7 @@ export default function MidImage() {
 
   return (
     <DivImg>
-        <CombineImg >
+        <CombineImg>
         <Img src={click} width="45px" />
         
         <div>

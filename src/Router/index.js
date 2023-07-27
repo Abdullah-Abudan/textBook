@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // pages
-import Question1 from "../Pages/index";
+import Question1 from "../Pages/Question1";
 import Question2 from "../Pages/Question2";
 import Question3 from "../Pages/Question3";
 

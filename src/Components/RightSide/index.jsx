@@ -1,26 +1,15 @@
 import React from 'react'
 import Header from '../Header'
-import MidImage, { Img } from '../RightSide/DivImg'
+import MidImage from '../RightSide/DivImg'
+import  { Img } from '../RightSide/DivImg/style'
 import {Desc, Title} from '../Fonts'
-import { styled } from 'styled-components';
 
 // img
 import man from "../../Images/man.png"
 import { StructureInputs } from '../Inputs';
+import { Flex, Rightside } from './style'
 
-const Flex = styled.div`
-display: flex;
-align-items: center;
-padding: 0 20px;
-gap: 20px;
-min-height: 40vh;
-`;
-const Rightside = styled.div`
-width:49%;
-position:relative;
-direction: rtl;
-overflow-y: auto;
-`;
+
 
 export default function RightSide() {
   return (
