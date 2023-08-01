@@ -10,6 +10,7 @@ import carMan from "../../../../../Images/carMan.png"
 // audio
 import Acharacter from "../../../../../Audio/Acharacter.mp3";
 import { BorderText, DivBorder, DivFlex, DivFlexActivity, DivInputName, DivQusetion, Img, Span } from './style';
+import TypedText from '../../../../TypedText';
 
 
 export default function Question2() {
@@ -45,7 +46,19 @@ export default function Question2() {
 
 
     <DivQusetion>
-    <p>أُلَوّنُ حَرفَ <bdi><Span>(عَ) الْعَيْن </Span></bdi>ثَانِيْ حَرْفٍ مِنِ اسْمي، وَأُكْمِلُ الْأَحْرُفَ  النّاقصة في الْمُرَبًّعاتِ الْمُلائِمَةِ، حَسَبَ الْكَلِمَةِ وَالصّورَةِ.</p>
+    <p>أُلَوّنُ حَرفَ 
+      <bdi>
+        <Span>
+        <TypedText
+          strings={['(عَ) الْعَيْن']}
+          typeSpeed={40}
+          backSpeed={50}
+          backDelay={1000}
+          loop
+          showCursor={false}
+        />
+      </Span>
+      </bdi>ثَانِيْ حَرْفٍ مِنِ اسْمي، وَأُكْمِلُ الْأَحْرُفَ  النّاقصة في الْمُرَبًّعاتِ الْمُلائِمَةِ، حَسَبَ الْكَلِمَةِ وَالصّورَةِ.</p>
     </DivQusetion>
     <div style={{ transform:'translate(-1px,-40px)'}}>
     <Img src={traffic} width="30px"  style={{cursor:"pointer"}}  onClick={handleMusicIconClick}/>

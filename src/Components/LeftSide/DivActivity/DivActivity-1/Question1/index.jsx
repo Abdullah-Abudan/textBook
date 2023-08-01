@@ -1,17 +1,18 @@
-import { StructureInputs } from "../../../Inputs";
-import { Title } from "../../../Fonts";
-import { StructureInputsActivity } from "./InputStructureActivity";
+import { StructureInputs } from "../../../../Inputs";
+import { Title } from "../../../../Fonts";
+import { StructureInputsActivity } from "../InputStructureActivity";
 import { useState } from "react";
 
 // img
-import activity1 from "../../../../Images/activity-1.png";
-import traffic from "../../../../Images/traffic.png";
-import children from "../../../../Images/children.png";
+import activity1 from "../../../../../Images/activity-1.png";
+import traffic from "../../../../../Images/traffic.png";
+import children from "../../../../../Images/children.png";
 
 // audio
-import Zcharacter from "../../../../Audio/Zcharacter.mp3";
+import Zcharacter from "../../../../../Audio/Zcharacter.mp3";
 
 import { BorderText, DivBorder, DivFlex, DivFlexActivity, DivInputName, DivQusetion, Img, Span } from "./style";
+import TypedText from "../../../../TypedText/index"
 
 export default function Question1() {
 
@@ -35,7 +36,19 @@ export default function Question1() {
 
 
     <DivQusetion>
-    <p>أُلَوّنُ حَرفَ <bdi><Span>(زَ) الزّاي </Span></bdi>أَوَّلَ حَرْفٍ مِنِ اسْمي، وَأُكْمِلُ الْأَحْرُفَ  النّاقصة في الْمُرَبًّعاتِ الْمُلائِمَةِ، حَسَبَ الْكَلِمَةِ وَالصّورَةِ.</p>
+    <p>أُلَوّنُ حَرفَ 
+      <bdi>
+      <Span>        
+        <TypedText
+          strings={['(زَ) الزّاي ']}
+          typeSpeed={100}
+          backSpeed={50}
+          backDelay={1000}
+          loop
+          showCursor={false}
+        />
+        </Span>
+        </bdi>أَوَّلَ حَرْفٍ مِنِ اسْمي، وَأُكْمِلُ الْأَحْرُفَ  النّاقصة في الْمُرَبًّعاتِ الْمُلائِمَةِ، حَسَبَ الْكَلِمَةِ وَالصّورَةِ.</p>
     </DivQusetion>
     
     <div style={{ transform:'translate(-1px,-40px)'}}> {/*15px to -1px */}

@@ -9,6 +9,7 @@ import correctAudio from "../../../../../Audio/correctAnswer.mp3";
 import wrongAudio from "../../../../../Audio/Zcharacter.mp3";
 
 import { Button, Div, DivQusetion, Img, SPAN, Span } from "./style";
+import TypedText from "../../../../TypedText";
 
 export default function Question3() {
   const sentence = "يَقِفُ زُملاءُ زعْتَرٍ على الرَّصيفِ";
@@ -47,7 +48,20 @@ export default function Question3() {
           {isMusicPlaying && <audio src={listenZ} autoPlay />}
         </div>
         <DivQusetion>
-          <p>أسْمَعُ قِراءَةَ الْجُمْلَةِ التّالِيَةِ، ثُمَّ أَضَعُ خَطًّا تَحْتَ الْكَلِمَةِ الَّتي فيها حَرْفُ <bdi><Span>(زَ) الزّاي </Span></bdi></p>
+          <p>أسْمَعُ قِراءَةَ الْجُمْلَةِ التّالِيَةِ، ثُمَّ أَضَعُ خَطًّا تَحْتَ الْكَلِمَةِ الَّتي فيها حَرْفُ  
+            <bdi>
+              <Span>
+              <TypedText
+              strings={['(زَ) الزّاي']}
+              typeSpeed={100}
+              backSpeed={50}
+              backDelay={1000}
+              loop
+              showCursor={false}
+              />
+              </Span>
+              </bdi>
+              </p>
         </DivQusetion>
       </div>
 

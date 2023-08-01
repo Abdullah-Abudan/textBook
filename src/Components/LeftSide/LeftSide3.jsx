@@ -1,5 +1,5 @@
 import React from 'react'
-import Question3 from './DivActivity/DivActivity-1/QPart3'
+import Question3 from './DivActivity/DivActivity-1/Question3'
 import Pagination from '../Pagination';
 import HeaderLeft from '../HeaderLeft';
 import { Leftside } from './style';

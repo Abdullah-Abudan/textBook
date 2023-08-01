@@ -7,7 +7,7 @@ import { Left, Right, Row } from "./style";
 import swap from "../../../Images/swap.png";
 import mark from "../../../Images/q-mark.png";
 
-function TopQ(props) {
+function TopQuestion(props) {
   return (
     
     <Row>
@@ -25,4 +25,4 @@ function TopQ(props) {
   );
 }
 
-export default TopQ;
+export default TopQuestion;
